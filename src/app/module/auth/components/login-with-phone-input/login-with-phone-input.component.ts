@@ -1,7 +1,7 @@
 import { Country } from '@angular-material-extensions/select-country';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
-import { MainPage } from 'projects/check-me-web/src/app/main.page';
+import { MainPage } from '../../../../main.page';
 import {  takeUntil } from 'rxjs';
 import { AuthProvider } from '../../state/providers/auth.provider';
 

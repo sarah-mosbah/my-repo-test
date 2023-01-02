@@ -1,9 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Area } from "../../shared/models/area.interface";
 import * as environment from '../../../../environments/environment'
 import { Observable } from "rxjs";
-import { SelectInput } from "projects/doctor-dashboard/src/app/modules/shared/models/selectInput.interface";
 import { SelectInputResponse } from "../../shared/models/selectInput.response";
 @Injectable({
     providedIn: 'root'

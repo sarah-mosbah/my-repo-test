@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MainPage } from 'projects/check-me-web/src/app/main.page';
+import { MainPage }  from '../../../../main.page';
 import { takeUntil } from 'rxjs';
 import { AuthProvider } from '../../state/providers/auth.provider';
 

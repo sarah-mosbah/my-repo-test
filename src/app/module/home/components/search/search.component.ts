@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute} from '@angular/router';
-import { MainPage } from 'projects/check-me-web/src/app/main.page';
+import { MainPage } from '../../../../main.page';
 import { takeUntil } from 'rxjs';
 import { FilterProvider } from '../../state/providers/filter.provider';
 @Component({

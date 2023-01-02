@@ -21,7 +21,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoginWithPhoneInputComponent } from './components/login-with-phone-input/login-with-phone-input.component';
 import { LoginWithEmailComponent } from './components/login-with-email/login-with-email.component';
 import { PasswordInputComponent } from './components/password-input/password-input.component';
-import {  SocialLoginModule } from 'angularx-social-login';
 @NgModule({
   declarations: [
     LoginPage,
@@ -42,7 +41,6 @@ import {  SocialLoginModule } from 'angularx-social-login';
     ReactiveFormsModule,
     SharedModule,
     MatIconModule,
-    SocialLoginModule,
     StoreModule.forFeature(fromFeatureState.authFeatureKey, fromFeatureState.reducer),
     EffectsModule.forFeature([AuthEffects]),
   ],

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MainPage } from 'projects/check-me-web/src/app/main.page';
+import { MainPage } from '../../../../../main.page';
 import { takeUntil } from 'rxjs';
-import { UserAuth } from '../../../../auth/models/userProfile';
+
 import { AuthProvider } from '../../../../auth/state/providers/auth.provider';
 import { UserProfile } from '../../../../models/login.interface';
 

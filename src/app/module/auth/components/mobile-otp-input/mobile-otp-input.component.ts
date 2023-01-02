@@ -5,7 +5,7 @@ import {
   EventEmitter,
 } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MainPage } from 'projects/check-me-web/src/app/main.page';
+import { MainPage }  from '../../../../main.page';
 import { takeUntil } from 'rxjs';
 import { AuthProvider } from '../../state/providers/auth.provider';
 @Component({

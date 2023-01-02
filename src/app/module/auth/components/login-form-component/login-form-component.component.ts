@@ -1,7 +1,7 @@
 import { Country } from '@angular-material-extensions/select-country';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MainPage } from 'projects/check-me-web/src/app/main.page';
+import { MainPage } from '../../../../main.page';
 import { environment } from '../../../../../../src/environments/environment';
 import { skip, take, takeUntil } from 'rxjs';
 import { VerificationRequest } from '../../../models/login.interface';

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { MainPage } from 'projects/check-me-web/src/app/main.page';
+import { MainPage } from '../../../../main.page';;
 import { Observable, skip, takeUntil } from 'rxjs';
 import { Sort } from '../../../shared/models/enum/sort.enum';
 import { FilterOptions } from '../../../shared/models/filterOptions.interface';

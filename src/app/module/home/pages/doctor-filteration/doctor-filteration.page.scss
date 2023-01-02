@@ -1,0 +1,31 @@
+@import 'mixins';
+@import 'variables';
+.container {
+    font-family: inherit;
+    &__main {
+        @include row;
+        width: 100%;
+        gap: 1.25rem;
+        &__doctors__list {
+            margin-left: auto;
+            width: 100%;
+            .functions {
+                @include row;
+                color: $color-primary-grey-text;
+                font-weight: 500;
+                font-size: 0.875rem;
+                line-height: 140%;
+                .sort {
+                    margin-left: auto;
+                    span {
+                        margin-left: 0.25rem;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+        &__filter {
+            width: 35%;
+        }
+    }
+}

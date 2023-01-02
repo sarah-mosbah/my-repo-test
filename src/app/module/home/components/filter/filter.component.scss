@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'mixins';
+.container {
+  font-family: $app-english-font-family;
+  background-color: $color-primary-white-smoke;
+  padding: 1.5rem;
+  border-radius: 10px;
+  &__title {
+    @include row-gap-align(center, flex-start, 0.5rem);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+  &__fee-range {
+    margin-top: 1.6rem;
+    .title {
+        color: $color-primary-blue;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    .slider-values {
+        @include row-align(center, space-between);
+        .value {
+            background-color: $color-primary-white;
+            color: $color-primary-blue;
+            text-align: center;
+            border: 1px solid $color-primary-blue;
+            border-radius: 10px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 0.875rem; 
+            padding: 4% 10%;
+        }
+       
+    }
+  }
+
+  &__star-rating {
+    margin-top: 2.5rem;
+    .title {
+        color: $color-primary-blue;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+  }
+
+  &__container__check-box {
+    check-me-checkbox {
+      margin-bottom: 1rem;
+    }
+  }
+}

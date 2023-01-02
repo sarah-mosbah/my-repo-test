@@ -1,0 +1,8 @@
+<div class="custom-pagination">
+    <div class="pagination-navigators" [class.disabled]="disabled" (click)="onPagination($event)">
+      <a> 
+        <img src="assets/images/blue-arrow-naviagtor.svg"
+          [ngStyle]="{transform: direction === 'left'? 'rotate(-180deg)' : ''}"> 
+      </a>
+    </div>
+</div>

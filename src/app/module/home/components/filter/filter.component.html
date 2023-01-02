@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="container__title">
+        <img src="assets/images/filter.svg">
+        <span>Filter Result</span>
+    </div>
+    <div class="container__fee-range">
+        <span class="title">Examination fees Range</span>
+        <slider 
+        [lowValue]="lowValue"
+        [highValue]="highValue"
+        (onSlideChange)="onSlideChange($event)" ></slider>
+        <div class="slider-values">
+          <div class="value">{{lowValue}} EGP</div>
+          <span>-</span>
+          <div class="value">{{highValue}} EGP</div>
+        </div>
+    </div>
+    <div class="container__star-rating">
+        <div class="title">Star Rating</div>
+        <star-rating [rating]="4" [readonly]="false"></star-rating>
+    </div>
+    <div class="container__check-box">
+        <check-me-checkbox 
+        label="Specialities" 
+        [options]="specilities$ | async"  
+        (onCheckboxChange)="onCheckBoxChange($event, 'speciality')"></check-me-checkbox>
+
+        <check-me-checkbox 
+        label="Area" 
+        [options]="areas$ | async"  
+        (onCheckboxChange)="onCheckBoxChange($event, 'area')"></check-me-checkbox>
+
+        <check-me-checkbox 
+        label="Gender" 
+        [options]="genders"  
+        (onCheckboxChange)="onCheckBoxChange($event, 'gender')"></check-me-checkbox>
+    </div>
+</div>

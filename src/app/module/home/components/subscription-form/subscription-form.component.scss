@@ -1,0 +1,49 @@
+@import "variables";
+@import "mixins";
+.subscription-container {
+    @include row;
+    background-color: $color-primary-white-smoke;
+    padding: 0.4rem 0.3rem 0.5rem 1rem;
+    border-radius: 0.625rem;
+    &__subscription-input {
+        @include row;
+        align-items: center;
+        .subscription-icon {
+            color: $color-primary-blue;
+            text-align: center;
+        }
+        input {
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            font-family: $app-english-font-family;
+            border: none;
+            margin-left: 1rem;
+            background-color: $color-primary-white-smoke;
+        }
+        input:focus-visible {
+            outline: none;
+        }
+        input::placeholder {
+            font-size: 1rem;
+            color: $color-primary-light-grey-text;
+        }
+    }
+
+    &__submit-action {
+        padding: 1rem  2rem;
+        cursor: pointer;
+        background-color: $color-primary-blue;
+        font-family: $app-english-font-family;
+        border-radius: 0.625rem;
+        margin-left: auto;
+        text-align: center;
+        align-self: center;
+        #submit-btn {
+            color: $color-primary-white;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+    }
+}
+

@@ -1,0 +1,25 @@
+<div class="container"  id="doctorlist">
+    <div class="container__main">
+        <div class="container__main__filter">
+            <filter (emitFilterOptions)="onFilterOptionsChanged($event)"></filter>
+        </div>
+        <div class="container__main__doctors__list" >
+            <div class="functions">
+                <span>{{totalCount}} founded</span>
+                <div class="sort">
+                    <img src="assets/images/sort-arrow-up.svg" (click)="onSort(Sort.asc)">
+                    <img src="assets/images/sort-arrow-down.svg" (click)="onSort(Sort.des)">
+                    <span>price</span>
+                </div>
+            </div>
+            <ng-container *ngFor="let doctor of doctors | paginate: {itemsPerPage: size, 
+                currentPage: pageNumber, totalItems: totalCount, id: 'paginator'}">
+                <doctor-information-card  [doctor]="doctor"></doctor-information-card> 
+            </ng-container>
+            <paginator (onPaginate)="pageNumber=$event; onPaginate()" *ngIf="totalCount"></paginator>
+        </div>
+    </div>
+   
+</div>
+
+

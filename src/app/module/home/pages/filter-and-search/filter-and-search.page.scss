@@ -1,0 +1,20 @@
+@import 'mixins';
+@import 'variables';
+.container {
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        color: $color-primary-blue;
+        margin-bottom: 1rem;
+        display: block;
+    }
+    &__chip__list {
+        @include row;
+        gap: 0.25rem;
+        margin-bottom: 1rem;
+    }
+    &__search {
+        margin-bottom: 1rem;
+    }
+} 

@@ -1,0 +1,35 @@
+<div class="form-container" *ngIf="loginForm">
+    <ng-container *ngIf="!isEmailMode; else emailMode">
+        <login-with-phone-input 
+        [loginForm]="loginForm" 
+        [isPasswordMode]="isPasswordMode" 
+        (emitVerificationNumber)="onVerificationNumberEmitted($event)"></login-with-phone-input>
+    </ng-container>
+    <ng-template #emailMode>
+        <login-with-email [loginForm]="loginForm"></login-with-email>
+    </ng-template>
+    <div class="error" *ngIf="errorMessage">
+       {{errorMessage}}
+    </div>
+    <div class="submit-wrapper">
+        <check-me-button btnText="Continue" [disabled]="loginForm.invalid" (buttonClickedEvent)="login()" *ngIf="!isLoggedInWithPhoneNumber && !isEmailMode"></check-me-button>
+        <check-me-button btnText="Verify" [disabled]="disableVerify" (buttonClickedEvent)="verify()" *ngIf="isLoggedInWithPhoneNumber && !isPasswordMode"></check-me-button>
+        <check-me-button btnText="Login" [disabled]="loginForm.invalid" (buttonClickedEvent)="loginWithPassword()" *ngIf="isLoggedInWithPhoneNumber && isPasswordMode"></check-me-button>
+        <check-me-button btnText="Login" [disabled]="loginForm.invalid" (buttonClickedEvent)="loginWithEmail()" *ngIf="isEmailMode"></check-me-button>
+    </div>
+    <div class="or" *ngIf="!isLoggedInWithPhoneNumber">Or</div>
+    <div class="social-action-wrapper" *ngIf="!isLoggedInWithPhoneNumber">
+        <light-check-me-button [btnText]="isEmailMode ? 'Continue with Mobile' : 'Continue with Email'" 
+        [icon]="isEmailMode ? 'assets/images/mobile-phone.png' : 'assets/images/message-icon.png'" 
+        (buttonClickedEvent)="isEmailMode = !isEmailMode;onIsEmailMode()"></light-check-me-button>
+        <light-check-me-button btnText="Continue with Facebook" icon="assets/images/facebook-icon.png" (buttonClickedEvent)="loginWithFacebook()"></light-check-me-button>
+        <light-check-me-button btnText="Continue with Apple" icon="assets/images/apple-icon.png" (buttonClickedEvent)="loginWithApple()"></light-check-me-button>
+        
+    </div>
+    <div class="login-with-password" *ngIf="isLoggedInWithPhoneNumber && !isPasswordMode">
+        <a class="link" style="margin-bottom: 0" (click)="setPasswordMode()">Login with password</a>
+    </div>
+    <!-- <div class="login-with-password" *ngIf="isPasswordMode">
+        <a class="link" style="margin-bottom: 0.2rem">Didn’t remember it? Forget Password</a>
+    </div> -->
+</div>

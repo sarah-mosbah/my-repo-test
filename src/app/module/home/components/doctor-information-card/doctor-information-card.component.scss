@@ -1,0 +1,59 @@
+@import 'variables';
+@import 'mixins';
+.container {
+    @include row;
+    border: 0.5px solid $color-primary-blue;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    font-family: $app-english-font-family;
+    margin-top: 1.5rem;
+    &__info {
+        padding-left: 1.5rem;
+        padding-bottom: 1rem;
+        width: 40%;
+        .mat-divider {
+            width: 100%;
+        }
+        p {
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 18px;
+            color: $color-primary-grey-text;
+            text-overflow: ellipsis;
+            max-width: 350px;
+        }
+        .price-location {
+            @include row-gap-align(center, center, 0.25rem);
+            margin-bottom: 1rem;
+            .price-location-container {
+                @include row-gap-align(center, center, 0.25rem);
+                img {
+                    margin-bottom: 0.2rem;
+                }
+            }
+            .price-location-container:last-child {
+                margin-left: auto;
+            }
+            span {
+                color: $color-primary-grey-text;
+                font-weight: 400;
+                font-size: 0.75rem;
+                line-height: 14px;
+            }
+        }
+        .doctor-availabilty {
+            color: $color-primary-blue;
+            font-family: $app-english-font-family;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.875rem;
+            margin-top: 1.25rem;
+        }
+    }
+    &__calendar {
+        align-self: center;
+        justify-self: center;
+        margin-left: auto;
+        padding: 0.5rem;
+    }
+}

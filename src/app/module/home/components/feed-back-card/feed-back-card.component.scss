@@ -1,0 +1,45 @@
+@import 'variables';
+@import 'mixins';
+.container {
+    @include column;
+    align-items: center;
+    background-color: $color-primary-white;
+    border: 0.5px solid $color-primary-blue;
+    border-radius: 12px;
+    padding: 2.75rem 1.43rem 2.6rem 2.2rem;
+    color: $color-black;
+    &__name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 29px;
+    }
+    &__type {
+        font-weight: 300;
+        font-size: 1.125rem;
+        line-height: 22px;
+    }
+    &__stars {
+        margin-top: 1.4rem;
+        .mat-icon-button {
+            width: unset;
+        }
+        .mat-icon {
+            color: #FFA033;
+        }
+    }
+    &__feedback-title {
+        color: $color-primary-blue;
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 24px;
+        text-align: center;
+    }
+   &__feedback {
+    word-wrap:break-word;
+    text-align: center;
+   }
+}
+
+
+
+

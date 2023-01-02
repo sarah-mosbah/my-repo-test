@@ -1,0 +1,51 @@
+<span class="phone-number">Phone Number</span>
+<form class="form-group" [formGroup]="loginForm">
+    <div class="country-code">
+        <mat-select-country appearance="outline" 
+            formControlName="countryCode"
+            [showCallingCode]="true"
+            (onCountrySelected)="onCountrySelectedChange($event)"
+            >
+        </mat-select-country>
+    </div>  
+    <div style="width: 100%;">
+        <mat-form-field appearance="outline" class="phone-input">
+            <input matInput type="tel" formControlName="phoneNumber">
+        </mat-form-field>
+        <div *ngIf="phoneNumber?.touched">
+            <mat-error *ngIf="(loginForm?.errors?.['invalidNumber'] || phoneNumber?.errors?.['pattern'])&& phoneNumber?.dirty && phoneNumber?.touched">
+                Phone Number is invalid   
+            </mat-error>
+            <mat-error *ngIf="phoneNumber?.errors?.['required'] ">
+                Phone Number is required 
+            </mat-error>
+        </div>
+    </div>
+
+</form>
+<div class="verification-message">
+    <span *ngIf="isLoggedInWithPhoneNumber && isPasswordMode; else verificationText">
+        Please enter password to continue to your account
+    </span> 
+    <ng-template #verificationText>
+        <span *ngIf="!isLoggedInWithPhoneNumber && !isPasswordMode; else loggedIn">
+            You will recieve an SMS with verification code to confirm your phone number
+            </span> 
+    </ng-template>
+   
+    <ng-template #loggedIn>
+    <span>
+        A Verification code was sent to you Via SMS
+        </span> 
+    </ng-template>
+</div>
+<ng-container *ngIf="isLoggedInWithPhoneNumber">
+    <div class="verification-code" *ngIf="!isPasswordMode; else passwordMode">
+        <span class="otp-title">Please enter the 6 digits verification Code</span> 
+        <mobile-otp-input (onInputIsValid)="onVerificationNumberIsValid($event)"></mobile-otp-input>
+        <a class="link" (click)="resendVerification()"> Didn’t get the code ? Resend it </a>
+    </div> 
+    <ng-template #passwordMode>
+        <password-input [loginForm]="loginForm"></password-input>
+      
+    </ng-template>

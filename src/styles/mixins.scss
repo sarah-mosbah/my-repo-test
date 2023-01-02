@@ -1,0 +1,61 @@
+@mixin row {
+    display: flex;
+}
+
+@mixin column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin row-wrap {
+    @include row;
+    flex-wrap: wrap;
+}
+  
+@mixin column-wrap {
+    @include column;
+    flex-wrap: wrap;
+}
+
+@mixin column-grid($gap-value) {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: $gap-value;
+}
+
+@mixin row-gap($gap-value) {
+    @include row;
+    gap: $gap-value;
+}
+
+@mixin row-align($align-items, $justify-content) {
+    @include row;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin row-gap-align($align-items, $justify-content, $gap-value) {
+    @include row-align($align-items, $justify-content);
+    gap: $gap-value;
+}
+
+@mixin row-align-wrap($align-items, $justify-content) {
+    @include row-wrap;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin row-gap-align-wrap($align-items, $justify-content, $gap-value) {
+    @include row-align-wrap($align-items, $justify-content);
+    gap: $gap-value;
+}
+@mixin column-align($align-items, $justify-content) {
+    @include column;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin column-gap-align($align-items, $justify-content, $gap-value) {
+    @include column-align($align-items, $justify-content);
+    gap: $gap-value;
+}

@@ -1,0 +1,25 @@
+@import 'variables';
+@import 'mixins';
+button {
+    @include row-align(center, center);
+    margin-right: auto;
+    color: $color-primary-blue;
+    padding: 0.5rem 3rem;
+    font-family: $app-font-family;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 100%;
+    img {
+        margin-right: 3px;
+    }
+}
+button:disabled {
+    opacity: 0.5;
+    color: gray !important;
+}
+.mat-button {
+    background: $color-primary-blue;
+    border-radius: 8px;
+    color: $color-primary-white;
+    font-family: $app-english-font-family;
+}

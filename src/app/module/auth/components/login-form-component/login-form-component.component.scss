@@ -1,0 +1,46 @@
+@import 'variables';
+@import 'mixins';
+.form-container {
+    @include column;
+    font-family: inherit;
+    justify-content: space-around;
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+    margin: auto;
+    margin-top: 2rem;
+    .or {
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: $color-primary-grey-text;
+    }
+    .login-with-password {
+        text-align: center;
+    }
+    .link {
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 21px;
+        text-decoration-line: underline;
+        color: $color-primary-blue;
+        margin-top: 2.7rem;
+        margin-bottom: 4rem;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .show-password {
+        color: $color-primary-blue;
+        scale: 0.8;
+    }
+    .error {
+        text-align: start;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 16px;
+        text-align: center;
+        color: #EB5757;
+        margin-top: 0.8rem;
+        margin-bottom: 1rem;
+    }
+}

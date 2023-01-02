@@ -1,0 +1,17 @@
+@import "mixins";
+.main-container {
+    @include column;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    &__content {
+        box-sizing: border-box;
+        flex: 1;
+    }
+    .main-pages {
+        padding: 8.75rem 5rem 0;
+    }
+}

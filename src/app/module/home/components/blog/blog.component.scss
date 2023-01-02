@@ -1,0 +1,46 @@
+@import 'variables';
+@import 'mixins';
+.card {
+    font-family: $app-english-font-family;
+    border-radius: 1rem;
+    max-width: 400px;
+    .header-image {
+        background-size: cover;
+    }
+    .mat-card {
+        padding: 1rem;
+        background-color: #f8f8f8
+    }
+    .mat-card-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 24px;
+        color: $color-primary-grey-text;
+    }
+    .mat-card-image  {
+        margin: unset;
+    }
+
+    .mat-card-subtitle {
+        color: $color-primary-grey-text;
+        font-weight: 300;
+        font-size: 0.875rem;
+        line-height: 24px;
+    }
+    .article-type {
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 24px;
+        color: $color-primary-grey-text;
+        margin-bottom: 0.85rem;
+    }
+    .article-title {
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 32px;
+        color: $color-primary-blue;
+    }
+      
+}
+

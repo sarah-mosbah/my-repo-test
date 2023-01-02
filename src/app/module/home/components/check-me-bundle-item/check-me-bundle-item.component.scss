@@ -1,0 +1,82 @@
+@import 'variables';
+@import 'mixins';
+
+.bundle-container {
+    @include column;
+    flex: 1;
+    border: 0.5px solid $color-primary-blue;
+    border-radius: 0.625rem;
+    height: 300px;
+    box-sizing: border-box;
+    align-items: center;
+    &__bundle-name {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 700;
+        color: $color-primary-grey-text;
+        margin: 40px 0;
+    }
+    &__bundle-information {
+        @include row;
+        justify-content: center;
+        margin-bottom: 27.2px;
+        gap: 1rem;
+        align-items: center;
+        #blood-test {
+            @include row;
+            align-items: center;
+            color: $color-primary-grey-text;
+            img {
+                width: 1rem;
+                margin-right: 0.5rem;
+            }
+        }
+        #fasting {
+            @include row;
+            align-items: center;
+            color: $color-secondary-light-orange;
+            img {
+                width: 1rem;
+            }
+        }
+        #no-of-tests {
+            color: $color-primary-blue;
+            font-weight: 600;
+            font-size: 0.625rem;  
+        }
+    }
+   &__price {
+        @include column;
+        align-items: center;
+        background-color: $color-secondary-light-blue;
+        padding: 1rem 1.2rem;
+        border-radius: 0 0 8.5px 8.5px;
+        margin-top: auto;
+        width: 100%;
+        box-sizing: border-box;
+        .price {
+            font-weight: 400;
+            font-size: 0.875rem;
+            color: $color-primary-grey-text;
+        }
+        .select-bundle-btn {
+            @include row;
+            padding: 0.625rem 0;
+            width: 100%;
+            background-color: $color-primary-white;
+            border: 0.5px solid $color-primary-blue;
+            justify-content:  center;
+            border-radius: 0.3rem;
+            color: $color-primary-blue;
+            img {
+                width: 1rem;
+            }
+        }
+    }
+
+    mat-divider {
+        border: 1px solid $color-primary-grey-text;
+        height: 1rem;
+    }
+}
+

@@ -1,0 +1,49 @@
+<div class="container">
+    <span class="container__title">Confirm your appointment</span>
+    <div class="container__booking-calendar">
+      <calendar [dayName]="time.format('dd') | slice:0:1" [dayNumber]="time.format('D')"></calendar>
+      <div class="dates">
+        <div>{{time.format('MMMM YYYY')}}</div>
+        <div>{{data.period.startsAt}} - {{data.period.endsAt}}</div>
+      </div>
+    </div>
+    <div class="container__form-title">Your personal info will appear to the doctor as follow</div>
+    <div class="container__form">
+       <form class="form-group" [formGroup]="bookingForm">
+        <div class="user-name">
+          <mat-form-field appearance="outline" class="phone-input" style="width: 100%;">
+            <img src="assets/images/profile.svg" matPrefix style="margin-right: 10px;">
+            <input matInput placeholder="Name" formControlName="userName">
+            <mat-error *ngIf="userName?.errors?.['required']&& userName?.touched">
+               يجب ادخال اسم المستخدم
+            </mat-error>
+          </mat-form-field>
+        </div>
+          <div class="country-code">
+            <mat-select-country 
+              appearance="outline" 
+              formControlName="countryCode"
+              [showCallingCode]="true"
+            ></mat-select-country> 
+            <div *ngIf="countryCode?.errors">
+              <mat-error *ngIf="countryCode?.errors?.['required']">
+                 يجب ادخال كود البلد
+              </mat-error>
+            </div>
+            <mat-form-field appearance="outline" class="phone-input">
+              <input matInput type="tel" formControlName="phoneNumber" placeholder="Phone Number" >
+              <mat-error *ngIf="phoneNumber?.errors?.['pattern']&& phoneNumber?.touched">
+                رقم الهاتف غير صحيح
+              </mat-error>
+              <mat-error *ngIf="phoneNumber?.errors?.['required'] && phoneNumber?.touched">
+                يجب ادخال رقم الهاتف
+              </mat-error>
+            </mat-form-field>
+          </div>  
+        </form>
+    </div>
+    <div class="container__actions">
+      <check-me-button btnText="Confirm" [disabled]="bookingForm.invalid" (buttonClickedEvent)="onBookingClicked()"></check-me-button>
+    </div>
+
+</div>

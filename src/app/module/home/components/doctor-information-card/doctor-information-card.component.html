@@ -1,0 +1,25 @@
+<div class="container" (click)="onClick()">
+    <div class="container__info">
+        <user-info-card [doctor]="doctor"></user-info-card>
+        <mat-divider></mat-divider>
+        <p>{{doctor.about}}</p>
+        <div class="price-location">
+            <div class="price-location-container">
+                <img src="assets/images/location.svg">
+                <span>{{doctor.cheapestClinic.area.name}}</span>
+            </div>
+            <div class="price-location-container">
+                <img src="assets/images/empty-wallet.svg">
+                <span>{{doctor.cheapestClinic.visitCost}}</span>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="doctor-availabilty">
+            <div>Available Today</div>
+            <div>From 3:50</div>
+        </div>
+    </div>
+    <div class="container__calendar">
+        <time-picker-navigator></time-picker-navigator>
+    </div>
+</div>

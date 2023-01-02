@@ -1,0 +1,9 @@
+<div class="wrapper" id="c" *ngIf="otpForm?.controls" dir="ltr">
+  <input [pattern]="'\\d*'" [class.otp-input-error]="invalid" [type]="inputType" numberOnly placeholder="__"  maxlength="1"
+    class="otp-input" numbersOnly autocomplete="off" 
+    *ngFor="let item of otpForm.controls | keys;let i=index"
+    [formControl]="$any(otpForm.controls[item])" id="otp_{{i}}" 
+    (keydown)="onKeyDown($event)"
+    (keyup)="onKeyUp($event,i)">
+</div>
+<div class="error" *ngIf="invalid">Code Invalid</div>

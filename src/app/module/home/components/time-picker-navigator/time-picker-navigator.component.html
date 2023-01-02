@@ -1,0 +1,8 @@
+<div class="container">
+    <paginator-arrow direction="left" [disabled]="isFirstItem" (onPaginationClicked)="onPagination($event)"></paginator-arrow>
+    <ng-container *ngFor="let period of displayedPeriods">
+        <time-picker [day]="period.day" [periods]="period.isFirstServeBased ? period.ranges! : period.timeSlots!" 
+        [isFirstServeBased]="period.isFirstServeBased" (bookingClicked)="onBookingClicked($event)"></time-picker>
+    </ng-container>
+    <paginator-arrow direction="right" [disabled]="false" (onPaginationClicked)="onPagination($event)"></paginator-arrow>
+</div>

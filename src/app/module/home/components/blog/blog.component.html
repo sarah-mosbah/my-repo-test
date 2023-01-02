@@ -1,0 +1,15 @@
+<mat-card class="card">
+    <img mat-card-image 
+    [src]="article.articleImage"
+    >
+    <mat-card-content>
+        <div class="article-type">{{article.articleType}}</div>
+        <div class="article-title">{{article.articleTitle}}</div>
+    </mat-card-content>
+    <mat-card-header>
+        <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + article.authorImage +')'}" 
+        class="header-image"></div>
+        <mat-card-title>{{article.authorName}}</mat-card-title>
+        <mat-card-subtitle>{{article.publishingTime}} - {{article.readingTime}}</mat-card-subtitle>
+    </mat-card-header>
+</mat-card>

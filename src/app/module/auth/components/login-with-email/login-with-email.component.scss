@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'mixins';
+.container {
+    .mat-form-field {
+        width: 100%;
+        height: 70px;
+    }
+    ::ng-deep .email-input.mat-form-field-flex .mat-input-element {
+        font-family: inherit;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.125rem;
+        color: $color-primary-grey-text;
+    }
+    
+    ::ng-deep .email-input.mat-form-field-appearance-outline .mat-form-field-outline {
+        border: 1px solid rgba(95, 99, 105, 0.5) !important;
+        border-radius: 10px !important;
+        background: $color-azure;
+    }
+}
+

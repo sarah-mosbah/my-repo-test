@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="container__title">
+        <div class="main-title">Get Your Blood Tests Done</div>
+        <div class="sub-title">From Home Safely in 2 hours!</div> 
+    </div>
+    <div class="container__search">
+        <app-search (onSearchBtnClicked)="onSearch($event)"></app-search>
+    </div>
+    <div class="chat-bot">
+        <img src="assets/images/chat-icon.svg">
+        <span>Need help?</span>
+    </div>
+    <div class="container__carousel">
+        <app-auto-slider [customOptions]="customOptions" [data]="slides">
+            <ng-template let-item>
+                <img class="slider-image" [src]="item"  style="height: 600px;">
+            </ng-template>
+        </app-auto-slider>
+    </div>
+    <div class="container__services">
+        <span class="title">What Service you need?</span>
+        <app-check-me-services></app-check-me-services>
+    </div>
+    <div class="container__bundles">
+        <span class="title">Most popular bundles</span>
+        <app-check-me-slider [data]="bundles" [responsive]="bundleResponsive">
+            <ng-template let-item>
+                <app-check-me-bundle-item [bundle]="item"></app-check-me-bundle-item>
+            </ng-template>
+        </app-check-me-slider>
+    </div>
+    <div class="container__categories">
+        <span class="title">Most popular packages</span>
+        <app-check-me-slider [data]="categories" [responsive]="categoryResponsive">
+            <ng-template let-item>
+                <app-check-me-category-item [category]="item"></app-check-me-category-item>
+            </ng-template>
+        </app-check-me-slider>
+    </div>
+    <div class="container__laboratories">
+        <span class="title">Featured Partners & Labs</span>
+        <app-laboratories></app-laboratories>
+    </div>
+    <div class="container__marketing-numbers">
+        <div class="success-values">
+            <h1>99%</h1>
+            <h3>Happy Customers</h3>
+        </div>
+        <div class="success-values">
+            <h1>30+</h1>
+            <h3>Connected Labs</h3>
+        </div>
+        <div class="success-values">
+            <h1>100K+</h1>
+            <h3>Successful download</h3>
+        </div>
+        <div class="success-values">
+            <h1>43</h1>
+            <h3>Team Members</h3>
+        </div>
+    </div>
+    <div class="container__clients-feedback">
+        <span class="title middle-main">What Our Clients Say About Us</span>
+        <img src="assets/images/green-background.svg">
+        <img src="assets/images/purple-background.svg">
+        <app-auto-slider [customOptions]="feedbackOptions" [data]="feedbacks">
+            <ng-template let-item>
+                <app-feed-back-card [feedback]="item"></app-feed-back-card>
+            </ng-template>
+        </app-auto-slider>       
+    </div>
+    <div class="container__blog">
+        <span class="title middle-main">Medical resources, take a look</span>
+        <app-check-me-slider [data]="articles" [responsive]="blogResponsive">
+            <ng-template let-item>
+                <app-blog [article]="item"></app-blog>
+            </ng-template>
+        </app-check-me-slider>
+        
+    </div>
+    <div class="container__app-download">
+        <app-mobile-app-ad></app-mobile-app-ad>
+    </div>
+
+</div>

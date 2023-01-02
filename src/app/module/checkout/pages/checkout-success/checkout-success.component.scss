@@ -1,0 +1,50 @@
+@import 'mixins';
+@import 'variables';
+.container {
+    @include column-gap-align(center, center, 1rem);
+    background-image: url(/assets/images/success-order-background.png);
+    object-fit: cover;
+    width: 60vw;
+    height: 100%;
+    text-align: center;
+    margin: auto;
+    font-family: $app-english-font-family;
+    #success {
+        color: $color-green-juice;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 30px;
+    }
+    #reservation {
+        width: 10rem;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 18px;
+        color: $color-primary-grey-text;
+    }
+    #reservation-time-details {
+        color: $color-primary-grey-text;
+        font-size: 1rem;
+        @include column-gap-align(center, center, 0.25rem);
+        #date {
+            font-weight: 500;
+        }
+        #time {
+            font-weight: 600;
+        }
+        ::ng-deep calendar .day {
+            gap: 0.5rem;
+            .value {
+                font-size: 0.75rem;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+            }
+        }
+    }
+    .action-wrappers {
+        width: 315px;
+        @include column-gap-align(initial, center, 0.625rem)
+    }
+}

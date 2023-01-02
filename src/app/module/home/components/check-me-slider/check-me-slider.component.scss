@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'mixins';
+
+.container {
+    ::ng-deep .owl-stage-outer {
+        position: relative;
+       
+    }
+    ::ng-deep .owl-theme .owl-nav {
+        margin-top: 0;
+    }
+    
+    ::ng-deep .owl-theme .owl-nav [class*=owl-] {
+        padding: 0;
+    }
+    
+    ::ng-deep .owl-prev {
+        width: 44px;
+        height: 44px;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        border:1px solid $color-primary-blue;
+        background: $color-primary-white !important;
+    }
+    
+    ::ng-deep.owl-next {
+        width: 44px;
+        height: 44px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        right: -41px;
+        border:1px solid $color-primary-blue;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: $color-primary-white !important;
+    }
+    
+    ::ng-deep .owl-theme .owl-dots .owl-dot {
+        display: none;
+    }
+}

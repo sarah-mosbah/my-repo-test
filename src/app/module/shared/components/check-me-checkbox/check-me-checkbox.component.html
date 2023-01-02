@@ -1,0 +1,27 @@
+<div class="container" *ngIf="options">
+    <label>{{label}}</label>
+
+
+    <div class="container__checkbox"
+    [class.selected]="result.includes(option.value)"
+     *ngFor = "let option of (!showAll ? (options | slice:0:5) :options)">
+        <mat-checkbox 
+        color="primary"
+        (change)="onChange($event, option)"
+        >
+            {{option.name}}
+            
+        </mat-checkbox>
+    </div>
+    
+    <a class="action" *ngIf="options.length > 5 && !showAll" (click)="toggleShow(true)">
+        Show All 
+    </a>
+    <a class="action" *ngIf="options.length > 5 && showAll" (click)="toggleShow(false)">
+        Show Less 
+    </a>
+</div>
+
+
+
+  

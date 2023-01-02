@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'mixins';
+.container {
+    ::ng-deep .owl-dot span{
+        width: 2.735rem;
+        background-color: $color-primary-royal-silver;
+        height: 0.44rem;
+    }
+    ::ng-deep .owl-theme .owl-nav.disabled+.owl-dots {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    ::ng-deep .owl-theme .owl-dots .owl-dot.active span {
+        background-color: $color-primary-green;
+        width: 64.75px;
+        height: 7px;
+    }
+}

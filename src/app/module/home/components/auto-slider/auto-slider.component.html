@@ -1,0 +1,9 @@
+<owl-carousel-o class="container" [options]="customOptions">
+    <ng-container *ngFor="let item of data">
+        <ng-template carouselSlide>   
+            <ng-template [ngTemplateOutlet]="templateRef" 
+            [ngTemplateOutletContext]="{$implicit: item}"></ng-template>
+          <!-- <img class="slider-image" [src]="slide"  style="height: 600px;"> -->
+        </ng-template>
+    </ng-container>
+</owl-carousel-o>

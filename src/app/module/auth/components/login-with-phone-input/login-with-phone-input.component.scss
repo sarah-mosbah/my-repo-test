@@ -1,0 +1,110 @@
+@import 'variables';
+@import 'mixins';
+.send-sms-text {
+    color: $color-primary-grey-text;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 1rem 0;
+}
+.link {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 21px;
+    text-decoration-line: underline;
+    color: $color-primary-blue;
+    margin-top: 2.7rem;
+    margin-bottom: 4rem;
+    display: inline-block;
+    cursor: pointer;
+}
+.phone-number {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: $color-primary-blue;
+}
+.form-group {
+    @include row;
+    gap: 18px;
+}
+.country-code {
+   height: 70px;  
+}
+.phone-input {
+    height: 70px;  
+    width: 100%;
+}
+.disable {
+    opacity: 0.5;
+}
+.verification-message {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1.3125rem;
+    margin-bottom: 1.7rem;
+    color: $color-primary-grey-text;
+}
+.verification-code {
+    margin: auto;
+    text-align: center;
+    .otp-title {
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+        text-align: right;
+        color: $color-primary-blue;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+    #verify-btn {
+        width: 100%;
+    }
+   
+}
+
+::ng-deep .country-code .mat-form-field-flex {
+    flex-direction: row-reverse !important;
+    width: 150px !important;
+}
+::ng-deep .country-code .mat-form-field-flex .mat-input-element {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-primary-grey-text;
+    
+}
+
+::ng-deep .country-code .mat-form-field-appearance-outline .mat-form-field-outline {
+    border: 1px solid rgba(95, 99, 105, 0.5) !important;
+    border-radius: 10px !important;
+    background-color: $color-azure;
+
+}
+
+::ng-deep .country-code .mat-form-field-suffix {
+    top: 0.5em !important;
+    margin-left: 8px !important; 
+}
+
+::ng-deep .phone-input.mat-form-field-flex .mat-input-element {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-primary-grey-text;
+}
+
+::ng-deep .phone-input.mat-form-field-appearance-outline .mat-form-field-outline {
+    border: 1px solid rgba(95, 99, 105, 0.5) !important;
+    border-radius: 10px !important;
+    background: $color-azure;
+}
+
+::ng-deep.mat-form-field-infix {
+    width: auto !important;
+}

@@ -1,0 +1,165 @@
+@import 'variables';
+@import 'mixins';
+
+:host-context(.main-container[dir="ltr"]){
+    .sticky {
+        padding:  0.9rem 4.85rem 0.9rem 5rem;;
+        .mat-toolbar-row {
+            .right-toolbar-items {
+                .logo {
+                    margin-left: 0;
+                    img[src="assets/images/checkme-logo-text.svg"] {
+                        order: 1;
+                    }
+                }
+            }
+            .left-toolbar-section {
+                .toolbar-item__list {
+                    .toolbar-item {
+                        margin-left: 0;
+                    }
+                    flex-basis: 50%;
+                    #navigation {
+                        #arrow-icon {
+                            margin-left: 1.5rem;
+                        }
+                        #navigation-icon {
+                            margin-right: 1rem;
+                        }
+                    }
+                    #my-account {
+                        flex-direction: row-reverse;
+                        img:last-child {
+                            display: none;
+                        }
+                    }
+                    #cart-number {
+                        margin-right: 0.25rem;
+                    }
+                    #languge-text {
+                        margin-right: 0.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
+.sticky {
+    padding: 0.9rem 4.85rem 0.9rem 0.2rem;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 100;
+    box-sizing: border-box;
+    font-family: $app-font-family;
+    .mat-toolbar-row {
+        @include row;
+        place-content: center space-between;
+        align-items: center;
+        .right-toolbar-items {
+            @include row;
+            align-items: center;
+            flex-basis: 45%;
+            .logo {
+                @include row;
+                place-content: center;
+                align-items: center;
+                margin-left: 3rem;
+                img[src="assets/images/checkme-logo-text.svg"] {
+                    margin-left: 0.75rem;
+                }
+            }
+            .mat-button {
+                font-weight: 600;
+                font-size: 1rem;
+                color: $color-primary-grey-text;
+                font-family: $app-font-family;
+            }
+            .toolbar-link__list {
+                @include row;
+                justify-content: space-around;
+                flex-basis: 50%;
+                .toolbar-link {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    line-height: 30px;
+                }
+            }
+        }
+        .left-toolbar-section {
+            @include row;
+            .toolbar-item__list {
+                @include row;
+                flex-basis: 60%;
+                .toolbar-item {
+                    @include row;
+                    align-items: center;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    line-height: 20px;
+                    flex-basis: 33%;
+                    margin-left: 10px;
+                    .icons-wrapper {
+                        @include row;
+                        align-items: center;
+                        margin-left: 1rem;
+                        span {
+                            margin-left: 3px; 
+                        }   
+                    }
+                    #cart-icon {
+                        margin-right: 1rem;
+                    }
+                }
+                #navigation {
+                    @include row;
+                    align-items: center;
+                    font-weight: 400;
+                    font-size: 0.75rem;
+                    line-height: 132.7%;
+                    text-align: right;
+                    color: rgba(0, 0, 0, 0.5);
+                    justify-content: space-around;
+                    #arrow-icon {
+                       margin-right: 0.5rem;
+                    }
+                    .location {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        display: block;
+                        margin-top: 4px;
+                    }
+                }
+                #my-account {
+                    @include row;
+                    img {
+                        margin-left: 5px;
+                    }
+                    .profile-picture {
+                        width: 2.25rem;
+                        height: 2.25rem;
+                        background-size: cover;
+                        display: block;
+                        border-radius: 1.125rem;
+                    }
+                    #welcome-text {
+                        color: $color-primary-blue;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 1rem;
+                        line-height: 0%;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mat-toolbar.mat-primary {
+    background: $color-primary-white;
+    color: $color-primary-grey-text;
+    box-shadow: 0px 2px 22px rgba(173, 164, 165, 0.3);
+}

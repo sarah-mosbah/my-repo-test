@@ -1,0 +1,13 @@
+<div class="container">
+    <span class="container__title">Search</span>
+    <div class="container__chip__list">
+        <chip title="Doctor" src="assets/images/profile-add.svg"></chip>
+        <chip title="Speciality" src="assets/images/info-circle.svg"></chip>
+        <chip title="Blood Test" src="assets/images/info-circle.svg"></chip>
+        <chip title="Bundle" src="assets/images/Stack.svg"></chip>
+    </div>
+    <div class="container__search">
+        <app-search (onSearchBtnClicked)="onSearchClicked($event)"></app-search>
+    </div>
+    <router-outlet></router-outlet>
+</div>

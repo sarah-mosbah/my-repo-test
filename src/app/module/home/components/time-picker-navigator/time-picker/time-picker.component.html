@@ -1,0 +1,30 @@
+<div class="container">
+    <span class="title" [class.active]="isTodaysDate">{{getDayFormat(day)}}</span>
+    <div class="period__list" *ngIf="periods && periods.length; else empty">
+        <ng-container  *ngIf="!isFirstServeBased; else firstServeBased">
+            <div class="period" *ngFor="let period of periods | slice:0:5"
+            (click)="setSelectedPeriod(period)"> {{period.startsAt}}</div>
+            <div class="period" *ngIf="periods.length > 5"> More</div>
+        </ng-container>
+        <ng-template #firstServeBased>
+            <ng-container *ngFor="let period of periods | slice:0:5">
+                <div class="period range" (click)="setSelectedPeriod(period)">
+                    <span>
+                        From
+                    </span>
+                    <span>{{period.startsAt}}</span>
+                    <span>to</span>
+                    <span>{{period.endsAt}}</span>
+                </div>
+                <mat-divider style="margin-top: 0.5rem;"></mat-divider>
+            </ng-container>
+        </ng-template>
+    </div>
+    <ng-template #empty>
+        <div class="empty"><span>No Available Appointments</span></div>
+    </ng-template>
+    <button mat-button style="margin-top: auto;" [disabled]="!(periods && periods.length)"
+     [class.disabled]="!(periods && periods.length) || !this.selectedPeriod" (click)="onBookingClick()">
+        Book
+    </button>
+</div>

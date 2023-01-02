@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'mixins';
+.container {
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    font-family: $app-english-font-family;
+    line-height: 16px;
+    color: $color-primary-grey-text;
+    font-weight: 400;
+    #name {
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: $color-primary-blue;
+    }
+    #speciality {
+        font-size: 0.75rem;
+    }
+    #rating {
+        font-size: 0.875rem;
+    }
+    img {
+        background-size: cover;
+    }
+}
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: unset;
+}
+.container.mat-card {
+    padding-left: 0;
+    padding-bottom: 0;
+}

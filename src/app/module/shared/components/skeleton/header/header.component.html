@@ -1,0 +1,45 @@
+<mat-toolbar color="primary" class="sticky">
+  <mat-toolbar-row>
+      <div class="right-toolbar-items" >
+        <div class="logo" >
+          <img src="assets/images/checkme-logo-text.svg">
+          <img src="assets/images/checkme-logo-icon.svg">
+        </div>
+        <div class="toolbar-link__list">
+          <a class="toolbar-link">الباقات</a>
+          <a class="toolbar-link">الطلبات</a>
+          <a class="toolbar-link">النتائج</a>
+          <a class="toolbar-link">المدونة</a>
+        </div>
+      </div>
+      <div class="left-toolbar-section">
+        <div class="toolbar-item__list">
+          <div class="toolbar-item" id="navigation">
+            <img  src="assets/images/navigation-icon.svg" id="navigation-icon">
+            <div>
+              <span style="display: block;">موقعك</span>
+              <span class="location">مدينة الشيخ الزايد </span>
+            </div>
+            <img src="assets/images/arrow-icon.svg" id="arrow-icon">
+          </div>
+          <div class="toolbar-item" id="my-account" *ngIf="userProfile">
+            <img src="assets/images/line-icon.svg" style="margin-left: 0.625rem;">
+            <img class="profile-picture" *ngIf="userProfile.profileImg" [src]="userProfile.profileImg"/>
+            <span id="welcome-text">Hello, {{userProfile.firstName}}</span>
+            <img  src="assets/images/line-icon.svg"  style="margin-right: 0.625rem;">
+          </div>
+          <div class="toolbar-item">  
+            <div class="icons-wrapper"  id="cart-icon">
+              <span id="cart-number">3</span> 
+              <img src="assets/images/cart-icon.svg">
+            </div>
+            <div class="icons-wrapper">
+              <span id="languge-text">عربي</span>
+              <img src="assets/images/universal-icon.svg">
+            </div>
+          </div>
+        </div>
+      </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+

@@ -1,0 +1,14 @@
+<owl-carousel-o class="container" [options]="customOptions" carouselClasses="inner-carousel owl-simple rows cols-1">
+    <ng-container *ngFor="let lab of labs; let i = index">
+    
+        <ng-template carouselSlide *ngIf="i % 2 === 0">  
+          <div class="img-container">
+            <img [src]="lab">
+          </div>
+          <div class="img-container"  *ngIf="labs[i+1]" style="display: block; margin-top: 1rem;">
+            <img [src]="labs[i+1]">
+          </div>
+         
+        </ng-template>
+      </ng-container>
+</owl-carousel-o>

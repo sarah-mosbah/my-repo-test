@@ -1,0 +1,11 @@
+<mat-card class="container">
+    <mat-card-header>
+      <img [src]="doctor.profileImg" mat-card-avatar *ngIf="doctor.profileImg">
+      <mat-card-title id="name">{{doctor.name}}</mat-card-title>
+      <mat-card-subtitle *ngIf="doctor.speciality" id="speciality">{{doctor.speciality}}</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="doctor.rating" id="rating">
+        <star-rating [rating]="doctor.rating"></star-rating>
+       <span> ( {{doctor.rating}} ) </span>
+      </mat-card-subtitle>
+    </mat-card-header>
+</mat-card>

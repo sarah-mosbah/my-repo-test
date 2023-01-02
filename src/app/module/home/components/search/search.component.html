@@ -1,0 +1,14 @@
+<div class="search-container">
+    <div class="search-container__search-input">
+            <img src="assets/images/search-icon.svg" class="search-icon">
+            <input
+              [formControl]="searchQuery"
+              placeholder="Search doctors, speciality or lab test"
+            />
+    </div>
+    <div class="search-container__search-action" (click)="onButtonClicked()">
+        <a id="search-btn" >
+          Search
+        </a>
+    </div>
+</div>

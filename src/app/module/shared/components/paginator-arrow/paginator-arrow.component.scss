@@ -1,0 +1,19 @@
+@import 'mixins';
+@import 'variables';
+.custom-pagination {
+    @include row;
+    .pagination-navigators {
+        @include row-align(center, center);
+        width: 32px;
+        height: 32px;
+        border: 1px solid $color-primary-blue;
+        border-radius: 4px;
+        margin: 0.2rem;
+        color: $color-primary-blue;
+        cursor: pointer;
+    }
+    .disabled {
+        opacity: 0.2;
+    }
+
+}

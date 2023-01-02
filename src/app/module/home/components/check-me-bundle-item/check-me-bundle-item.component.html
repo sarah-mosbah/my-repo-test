@@ -1,0 +1,25 @@
+<div class="bundle-container" *ngIf="bundle">
+    <div class="bundle-container__bundle-name">{{bundle.name}}</div>
+    <div class="bundle-container__bundle-information">
+            <span id="blood-test" *ngIf="bundle.properties.bloodTest">
+                <img src="assets/images/alert-icon.svg">
+                <span>Blood Test</span>
+            </span>
+            <mat-divider *ngIf="bundle?.properties?.bloodTest" [vertical]="true"></mat-divider>
+            <span id="fasting" *ngIf="bundle.properties.fasting">
+                <img src="assets/images/warning-icon.svg">
+                <span>Fasting</span>
+            </span>
+            <mat-divider [vertical]="true" *ngIf="bundle?.properties?.noOfTests"></mat-divider>
+            <span id="no-of-tests" *ngIf="bundle.properties.noOfTests">
+                <span>{{bundle.properties.noOfTests}} Tests</span>
+            </span>
+    </div>
+    <div class="bundle-container__price"> 
+        <div class="price">Starting <b style="font-size: 1rem;">{{bundle.price}}</b> EGP</div>
+        <a class="select-bundle-btn">
+            <img src="assets/images/plus.svg">
+            <span>Select Bundle</span>
+        </a>
+    </div>
+</div>

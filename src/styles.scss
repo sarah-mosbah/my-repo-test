@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+@font-face {
+    font-family: 'Cairo';
+    src: url('assets/fonts/Cairo/Cairo-VariableFont_wght.ttf') format('woff2');
+}
+html, body { height: 100%;  padding: 0; margin: 0;}
+body { margin: 0; box-sizing: border-box;}

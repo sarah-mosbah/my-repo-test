@@ -1,0 +1,18 @@
+<div class="container">
+    <span class="container__title">Email</span>
+    <form class="form-group" [formGroup]="loginForm">
+            <mat-form-field appearance="outline" class="email-input">
+                <input matInput type="text" formControlName="email" placeholder="Email">
+                <img src="assets/images/message-icon.png" matPrefix> 
+            </mat-form-field>
+            <div *ngIf="email?.touched">
+                <mat-error *ngIf="email?.errors?.['pattern'] && email?.dirty && email?.touched">
+                    Email is invalid   
+                </mat-error>
+                <mat-error *ngIf="email?.errors?.['required'] ">
+                    Email is required 
+                </mat-error>
+            </div>
+       <password-input [loginForm]="loginForm"></password-input>
+    </form>
+</div>

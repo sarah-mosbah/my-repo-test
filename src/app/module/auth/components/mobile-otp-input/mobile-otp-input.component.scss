@@ -1,0 +1,53 @@
+@import 'variables';
+@import 'mixins';
+
+.wrapper {
+    .otp-input {
+        background: $color-azure;
+        border: 1px solid rgba(95, 99, 105, 0.5);
+        border-radius: 0.625rem;
+        width: 45px;
+        height: 72px;
+        text-align: center;
+        color: $color-primary-grey-text;
+        font-size: 0.875rem;
+        font-family: 'Montserrat';
+    }
+    .otp-input:not(:last-child) {
+        margin-right: 0.5rem;
+    }
+    .otp-input::placeholder {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .otp-input-error {
+        border-color: #EB5757;
+        color: #EB5757;
+    }
+}
+.error {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #EB5757;
+    margin-top: 10px;
+}
+@media screen and (max-width:767px) {
+    .otp-input {
+        width: 40px;
+        font-size: 24px;
+        height: 40px;
+    }
+}
+
+
+@media screen and (max-width:420px) {
+    .otp-input {
+        width: 30px;
+        font-size: 18px;
+        height: 30px;
+    }
+}

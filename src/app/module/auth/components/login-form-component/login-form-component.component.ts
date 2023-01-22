@@ -24,9 +24,9 @@ export class LoginFormComponent extends MainPage implements OnInit {
   isEmailMode:  boolean = false;
   isLoggedInWithPhoneNumber: boolean = false;
   errorMessage: any;
-  constructor(private formBuilder: FormBuilder, 
-    private authProvider: AuthProvider, 
-    private changeRef: ChangeDetectorRef) { 
+  constructor(private formBuilder: FormBuilder,
+    private authProvider: AuthProvider,
+    private changeRef: ChangeDetectorRef) {
     super();
     (window as any).fbAsyncInit = function() {
       FB.init({
@@ -45,6 +45,9 @@ export class LoginFormComponent extends MainPage implements OnInit {
        js.src = "https://connect.facebook.net/en_US/sdk.js";
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
+    window.addEventListener('message', async (event) => {
+      console.log(`User Data : ${event}`);
+    })
   }
 
   ngOnInit(): void {
@@ -71,7 +74,7 @@ export class LoginFormComponent extends MainPage implements OnInit {
         else this.isVerified = false;
       });
   }
- 
+
   get password() {
     return this.loginForm.get('password');
   }
@@ -85,7 +88,7 @@ export class LoginFormComponent extends MainPage implements OnInit {
   get phoneNumber() {
     return this.loginForm.get('phoneNumber');
   }
- 
+
   onIsEmailMode() {
     if(this.isEmailMode) {
       this.phoneNumber?.setValidators([]);
@@ -165,7 +168,7 @@ export class LoginFormComponent extends MainPage implements OnInit {
   async loginWithApple() {
     try {
       AppleID.auth.init({
-                clientId : 'com.checkmeweb',
+                clientId : environment.appleBundleId,
                 scope : 'name email',
                 redirectURI : 'http://localhost:4200/login',
                 state : 'init',
@@ -174,15 +177,15 @@ export class LoginFormComponent extends MainPage implements OnInit {
             });
       const data = await AppleID.auth.signIn();
       if(data.authorization.id_token) {
-        
+
       }
-      
+
     } catch (error) {
       console.log(error)
       //handle error.
     }
   }
 
-  
+
 
 }

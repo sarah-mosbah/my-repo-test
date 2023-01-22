@@ -7,7 +7,7 @@ const app = express();
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/angular-tour-of-heroes'));
 
-app.post('https://checkme-test.herokuapp.com/api/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
     try {
       console.log('ssssss I reached here');
         return res.send(

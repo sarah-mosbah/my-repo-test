@@ -170,7 +170,7 @@ export class LoginFormComponent extends MainPage implements OnInit {
       AppleID.auth.init({
                 clientId : environment.appleBundleId,
                 scope : 'name email',
-                redirectURI :encodeURIComponent('https://checkme-test.herokuapp.com/api/login'),
+                redirectURI :'https://checkme-test.herokuapp.com/api/login',
                 state : 'init',
                 nonce : 'test',
                 usePopup : true,

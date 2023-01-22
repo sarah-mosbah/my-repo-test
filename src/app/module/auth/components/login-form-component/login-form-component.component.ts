@@ -170,10 +170,11 @@ export class LoginFormComponent extends MainPage implements OnInit {
       AppleID.auth.init({
                 clientId : environment.appleBundleId,
                 scope : 'name email',
-                redirectURI : 'https://checkme-test.herokuapp.com/api/login',
+                redirectURI :encodeURIComponent('https://checkme-test.herokuapp.com/api/login'),
                 state : 'init',
                 nonce : 'test',
-                usePopup : true //or false defaults to false
+                usePopup : true,
+                response_mode: 'form_post' //or false defaults to false
             });
       const data = await AppleID.auth.signIn();
       if(data.authorization.id_token) {

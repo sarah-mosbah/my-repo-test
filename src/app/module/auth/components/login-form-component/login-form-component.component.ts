@@ -45,9 +45,9 @@ export class LoginFormComponent extends MainPage implements OnInit {
        js.src = "https://connect.facebook.net/en_US/sdk.js";
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
-    window.addEventListener('message', async (event) => {
-      console.log(`User Data : ${event}`);
-    })
+      window.addEventListener('message', async (event) => {
+        console.log(`User Data`, event);
+      })
   }
 
   ngOnInit(): void {

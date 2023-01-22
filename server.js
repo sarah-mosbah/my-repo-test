@@ -1,15 +1,15 @@
 const express = require('express');
 
-const path = require('path');   
+const path = require('path');
 
-const app = express();   
+const app = express();
 
-// Serve only the static files form the dist directory    
-app.use(express.static(__dirname + '/dist'));
+// Serve only the static files form the dist directory
+app.use(express.static(__dirname + '/dist/angular-tour-of-heroes'));
 
-app.get('/*', function(req,res) {  
-    res.sendFile(path.join(__dirname+'/dist/index.html'));   
-});  
+app.get('/*', function(req,res) {
+    res.sendFile(path.join(__dirname+'/dist/angular-tour-of-heroes/index.html'));
+});
 
-// Start the app by listening on the default Heroku port    
+// Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
